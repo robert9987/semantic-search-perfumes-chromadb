@@ -80,6 +80,14 @@ Ejemplo con una consulta propia:
 .\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py --query "Quiero una fragancia oriental sensual calida con ambar y vainilla para la noche"
 ```
 
+## Ejecutar tests
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+Los tests validan que algunas consultas semanticas devuelvan primero el perfume esperado. Por ejemplo, una busqueda con `ambar`, `vainilla`, `oriental` y `sensual` debe rankear primero `Ambar Oriental`.
+
 ## Que observar
 
 La misma query se ejecuta dos veces en la demo de consola:

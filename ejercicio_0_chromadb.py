@@ -201,6 +201,9 @@ class EmbeddingsPerfumeria:
     def name(self) -> str:
         return "embeddings_perfumeria_didacticos"
 
+    def is_legacy(self) -> bool:
+        return True
+
     def __call__(self, input: Iterable[str]) -> list[list[float]]:
         return [self._vectorizar(texto) for texto in input]
 
