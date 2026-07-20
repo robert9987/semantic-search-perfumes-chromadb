@@ -1,6 +1,6 @@
 # Busqueda semantica para perfumeria con ChromaDB
 
-Proyecto practico de base de datos vectorial aplicado a comentarios ficticios de perfumes. La idea es simular un buscador semantico: el usuario escribe una necesidad en lenguaje natural y el sistema devuelve los comentarios/productos mas parecidos por significado.
+Proyecto practico de base de datos vectorial aplicado a comentarios ficticios de perfumes. Simula un buscador semantico: el usuario escribe una necesidad en lenguaje natural y el sistema devuelve los productos mas parecidos por significado.
 
 Los datos estan organizados con una taxonomia inspirada en la rueda de fragancias: floral, frutal, fougere, citrico, aromatico, maderas, oriental, chipre y subfamilias frescas/acuatica.
 
@@ -19,38 +19,41 @@ Construir una demo simple que muestre el flujo principal de una base vectorial:
 - Python
 - ChromaDB
 - JSON como fuente de datos
-- VS Code como entorno de trabajo recomendado
+- HTML, CSS y JavaScript sin framework para la interfaz local
+- VS Code como entorno recomendado
 
 ## Estructura
 
 ```text
 .
-├── data/
-│   ├── perfumes_iniciales.json
-│   └── perfumes_nuevos.json
-├── ejercicio_0_chromadb.py
-├── requirements.txt
-└── README.md
+|-- data/
+|   |-- perfumes_iniciales.json
+|   `-- perfumes_nuevos.json
+|-- ejercicio_0_chromadb.py
+|-- tokipick_web.py
+|-- requirements.txt
+|-- README.md
+`-- .gitignore
 ```
 
 ## Preparacion en VS Code
 
-Abri esta carpeta en Visual Studio Code:
+Abrir esta carpeta en Visual Studio Code:
 
 ```powershell
-code "D:\OneDrive\Office importante\LLms - Profesor"
+code "D:\OneDrive\Office importante\semantic-search-perfumes-chromadb"
 ```
 
-Si `code` no esta habilitado, abri VS Code manualmente y elegi:
+Si `code` no esta habilitado, abrir VS Code manualmente y elegir:
 
 ```text
 File > Open Folder
 ```
 
-Luego selecciona:
+Luego seleccionar:
 
 ```text
-D:\OneDrive\Office importante\LLms - Profesor
+D:\OneDrive\Office importante\semantic-search-perfumes-chromadb
 ```
 
 ## Crear entorno virtual
@@ -61,49 +64,41 @@ En la terminal integrada de VS Code:
 & "C:\Users\rober\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m venv .venv
 ```
 
-Instala dependencias:
+Instalar dependencias:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r .\requirements.txt
 ```
 
-## Ejecutar demo
+## Ejecutar demo por consola
 
 ```powershell
 .\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py
 ```
 
-Si VS Code muestra `ModuleNotFoundError: No module named 'chromadb'`, significa que esta usando otro Python. Selecciona el interprete `.venv\Scripts\python.exe` desde `Python: Select Interpreter`, o ejecuta el script con el comando anterior desde la terminal integrada.
-
 Ejemplo con una consulta propia:
 
 ```powershell
-.\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py --query "Quiero un perfume dulce con vainilla para la noche"
+.\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py --query "Quiero una fragancia oriental sensual calida con ambar y vainilla para la noche"
 ```
 
-Otro ejemplo:
-
-```powershell
-.\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py --query "Busco una fragancia elegante intensa y amaderada"
-```
-
-## Ejecutar interfaz web TOKIPICK II
-
-El proyecto ahora incluye una interfaz web local sin dependencias extra de frontend. Usa el mismo motor de busqueda semantica y permite comparar resultados incluyendo o no los comentarios nuevos.
+## Ejecutar interfaz web Tokipick II
 
 ```powershell
 .\.venv\Scripts\python.exe .\tokipick_web.py
 ```
 
-Luego abri:
+Luego abrir:
 
 ```text
 http://127.0.0.1:8000
 ```
 
+La interfaz incluye buscador semantico, accesos por familia olfativa, toggle para incluir nuevos comentarios, selector de cantidad de resultados y tarjetas con producto, familia, subfamilia, notas, etiquetas y porcentaje de similitud.
+
 ## Que observar
 
-La misma query se ejecuta dos veces:
+La misma query se ejecuta dos veces en la demo de consola:
 
 - Primero contra los comentarios iniciales.
 - Despues de insertar nuevos comentarios.
@@ -119,7 +114,7 @@ Cada perfume incluye metadata pensada para busqueda y analisis:
 
 ## Como explicarlo en el CV
 
-Proyecto de busqueda semantica con ChromaDB aplicado a comentarios de perfumeria. Modele textos como vectores usando una taxonomia inspirada en la rueda de fragancias, cree una coleccion vectorial, ejecute consultas por similitud y compare resultados antes y despues de insertar nuevos documentos.
+Proyecto de busqueda semantica con ChromaDB aplicado a comentarios de perfumeria. Modele textos como vectores usando una taxonomia inspirada en la rueda de fragancias, cree una coleccion vectorial, ejecute consultas por similitud y desarrolle una interfaz web local para explorar recomendaciones.
 
 ## Proximas mejoras
 
