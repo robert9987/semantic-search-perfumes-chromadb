@@ -19,7 +19,6 @@ Construir una demo simple que muestre el flujo principal de una base vectorial:
 - Python
 - ChromaDB
 - JSON como fuente de datos
-- HTML, CSS y JavaScript sin framework para la interfaz local
 - VS Code como entorno recomendado
 
 ## Estructura
@@ -30,7 +29,6 @@ Construir una demo simple que muestre el flujo principal de una base vectorial:
 |   |-- perfumes_iniciales.json
 |   `-- perfumes_nuevos.json
 |-- ejercicio_0_chromadb.py
-|-- tokipick_web.py
 |-- requirements.txt
 |-- README.md
 `-- .gitignore
@@ -82,20 +80,6 @@ Ejemplo con una consulta propia:
 .\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py --query "Quiero una fragancia oriental sensual calida con ambar y vainilla para la noche"
 ```
 
-## Ejecutar interfaz web Tokipick II
-
-```powershell
-.\.venv\Scripts\python.exe .\tokipick_web.py
-```
-
-Luego abrir:
-
-```text
-http://127.0.0.1:8000
-```
-
-La interfaz incluye buscador semantico, accesos por familia olfativa, toggle para incluir nuevos comentarios, selector de cantidad de resultados y tarjetas con producto, familia, subfamilia, notas, etiquetas y porcentaje de similitud.
-
 ## Que observar
 
 La misma query se ejecuta dos veces en la demo de consola:
@@ -114,13 +98,13 @@ Cada perfume incluye metadata pensada para busqueda y analisis:
 
 ## Como explicarlo en el CV
 
-Proyecto de busqueda semantica con ChromaDB aplicado a comentarios de perfumeria. Modele textos como vectores usando una taxonomia inspirada en la rueda de fragancias, cree una coleccion vectorial, ejecute consultas por similitud y desarrolle una interfaz web local para explorar recomendaciones.
+Proyecto de busqueda semantica con ChromaDB aplicado a comentarios de perfumeria. Modele textos como vectores usando una taxonomia inspirada en la rueda de fragancias, cree una coleccion vectorial y ejecute consultas por similitud comparando resultados antes y despues de insertar nuevos documentos.
 
 ## Proximas mejoras
 
 - Reemplazar el embedding didactico por embeddings reales de un modelo.
 - Agregar mas comentarios, subfamilias y notas olfativas.
 - Crear una API con FastAPI.
-- Separar la interfaz web en archivos estaticos cuando el proyecto crezca.
+- Crear una interfaz web simple cuando el proyecto crezca.
 - Agregar filtros por ocasion, familia olfativa, intensidad y presupuesto.
 - Guardar resultados en CSV para analizarlos.
