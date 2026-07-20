@@ -1,0 +1,68 @@
+[
+  {
+    "id": "comentario-001",
+    "documento": "Fragancia floral suave con flores blancas, rosa y jazmin. Se percibe delicada, romantica, femenina y primaveral.",
+    "metadata": {
+      "producto": "Aurora Floral",
+      "familia_olfativa": "floral",
+      "subfamilia": "floral suave",
+      "notas": "flores blancas, rosa, jazmin",
+      "etiquetas": "delicada, romantica, femenina, primavera, suave"
+    }
+  },
+  {
+    "id": "comentario-002",
+    "documento": "Perfume frutal con durazno, frutilla, anana, melon y frutos rojos. Tiene una personalidad alegre, vibrante y jovial.",
+    "metadata": {
+      "producto": "Fruta Roja",
+      "familia_olfativa": "frutal",
+      "subfamilia": "frutal jugoso",
+      "notas": "durazno, frutilla, anana, melon, frutos rojos",
+      "etiquetas": "alegre, vibrante, jovial, dulce, unisex"
+    }
+  },
+  {
+    "id": "comentario-003",
+    "documento": "Fragancia fougere con lavanda, musgo, encina y bergamota. Evoca bosque humedo, aromas verdes y un perfil masculino tradicional.",
+    "metadata": {
+      "producto": "Verde Fougere",
+      "familia_olfativa": "fougere",
+      "subfamilia": "fougere verde",
+      "notas": "lavanda, musgo, encina, bergamota",
+      "etiquetas": "verde, bosque, humedo, tradicional, masculino"
+    }
+  },
+  {
+    "id": "comentario-004",
+    "documento": "Perfume citrico con bergamota, limon y naranja. Es fresco, limpio, volatil, alegre y muy comodo para usar de dia.",
+    "metadata": {
+      "producto": "Sol Citrico",
+      "familia_olfativa": "citrico",
+      "subfamilia": "citrico fresco",
+      "notas": "bergamota, limon, naranja",
+      "etiquetas": "fresco, limpio, volatil, alegre, dia"
+    }
+  },
+  {
+    "id": "comentario-005",
+    "documento": "Fragancia aromatica con salvia, romero, comino y lavanda. Mezcla hierbas y especias con un caracter intenso y masculino.",
+    "metadata": {
+      "producto": "Herbal Aromatico",
+      "familia_olfativa": "aromatico",
+      "subfamilia": "aromatico especiado",
+      "notas": "salvia, romero, comino, lavanda",
+      "etiquetas": "hierbas, especias, intenso, masculino, herbal"
+    }
+  },
+  {
+    "id": "comentario-006",
+    "documento": "Perfume de maderas con cedro, abedul, sandalo, vetiver y pachuli. Se siente seco, elegante, distinguido y de caracter masculino.",
+    "metadata": {
+      "producto": "Cedro Vetiver",
+      "familia_olfativa": "maderas",
+      "subfamilia": "maderas secas",
+      "notas": "cedro, abedul, sandalo, vetiver, pachuli",
+      "etiquetas": "seco, elegante, distinguido, masculino, madera"
+    }
+  }
+]
