@@ -33,7 +33,8 @@ Construir una demo simple que muestre el flujo principal de una base vectorial:
 |   |-- data_loader.py
 |   |-- embeddings.py
 |   |-- main.py
-|   `-- vector_store.py
+|   |-- vector_store.py
+|   `-- web.py
 |-- tests/
 |   `-- test_search.py
 |-- examples/
@@ -96,6 +97,20 @@ Tambien se mantiene el script original como acceso rapido:
 .\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py
 ```
 
+## Ejecutar frontend local
+
+```powershell
+.\.venv\Scripts\python.exe -m src.web
+```
+
+Luego abrir:
+
+```text
+http://127.0.0.1:8000
+```
+
+El frontend permite escribir una consulta, elegir familias olfativas prearmadas, incluir o excluir los documentos nuevos y ver tarjetas con similitud, notas y metadata.
+
 ## Ejecutar tests
 
 ```powershell
@@ -142,7 +157,7 @@ Cada familia incluye metadata pensada para busqueda y analisis:
 - Si la consulta usa sinonimos que no estan en el vocabulario, el ranking puede perder precision.
 - Los datos son ficticios y estan pensados para aprendizaje, no para recomendacion comercial real.
 - Todavia no usa embeddings reales de modelos especializados.
-- No incluye API ni interfaz web; el foco actual es entender el flujo de busqueda vectorial.
+- La interfaz web es local y usa el servidor HTTP incluido en Python; no esta preparada todavia como aplicacion desplegable.
 
 ## Como explicarlo en el CV
 
@@ -153,6 +168,6 @@ Proyecto de busqueda semantica con ChromaDB aplicado a comentarios de perfumeria
 - Reemplazar el embedding didactico por embeddings reales de un modelo.
 - Agregar mas comentarios, subfamilias y notas olfativas.
 - Crear una API con FastAPI.
-- Crear una interfaz web simple cuando el proyecto crezca.
+- Separar el frontend en archivos estaticos cuando el proyecto crezca.
 - Agregar filtros por ocasion, familia olfativa, intensidad y presupuesto.
 - Guardar resultados en CSV para analizarlos.
