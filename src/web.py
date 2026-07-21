@@ -481,7 +481,6 @@ INDEX_HTML = """
     <aside class="sidebar">
       <section class="brand">
         <h1>Mista</h1>
-        <p>Busqueda semantica de familias olfativas con ChromaDB</p>
       </section>
 
       <div class="wheel" aria-hidden="true"><span>Rueda de fragancias</span></div>
