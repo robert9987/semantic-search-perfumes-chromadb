@@ -7,13 +7,15 @@ from pathlib import Path
 
 import chromadb
 
-from ejercicio_0_chromadb import (
+from src.config import (
     COLLECTION_NAME,
     DOCUMENTOS_INICIALES_PATH,
     DOCUMENTOS_NUEVOS_PATH,
-    EmbeddingsPerfumeria,
+)
+from src.data_loader import cargar_documentos
+from src.embeddings import EmbeddingsPerfumeria
+from src.vector_store import (
     buscar_resultados,
-    cargar_documentos,
     insertar_documentos,
 )
 

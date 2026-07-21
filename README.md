@@ -28,6 +28,14 @@ Construir una demo simple que muestre el flujo principal de una base vectorial:
 |-- data/
 |   |-- perfumes_iniciales.json
 |   `-- perfumes_nuevos.json
+|-- src/
+|   |-- config.py
+|   |-- data_loader.py
+|   |-- embeddings.py
+|   |-- main.py
+|   `-- vector_store.py
+|-- tests/
+|   `-- test_search.py
 |-- ejercicio_0_chromadb.py
 |-- requirements.txt
 |-- README.md
@@ -71,13 +79,19 @@ Instalar dependencias:
 ## Ejecutar demo por consola
 
 ```powershell
-.\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py
+.\.venv\Scripts\python.exe -m src.main
 ```
 
 Ejemplo con una consulta propia:
 
 ```powershell
-.\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py --query "Quiero una fragancia oriental sensual calida con ambar y vainilla para la noche"
+.\.venv\Scripts\python.exe -m src.main --query "Quiero una fragancia oriental sensual calida con ambar y vainilla para la noche"
+```
+
+Tambien se mantiene el script original como acceso rapido:
+
+```powershell
+.\.venv\Scripts\python.exe .\ejercicio_0_chromadb.py
 ```
 
 ## Ejecutar tests
