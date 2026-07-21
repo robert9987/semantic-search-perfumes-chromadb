@@ -47,10 +47,10 @@ class SearchRankingTest(unittest.TestCase):
         self.assertGreater(len(resultados), 0)
         self.assertEqual(resultados[0]["producto"], expected_product)
 
-    def test_citrico_query_returns_sol_citrico(self) -> None:
+    def test_citrico_query_returns_familia_citrica(self) -> None:
         self.assertTopProduct(
             "Busco un perfume citrico fresco con bergamota limon y naranja",
-            "Sol Citrico",
+            "Familia Citrica",
         )
 
     def test_wood_query_returns_cedro_vetiver(self) -> None:
