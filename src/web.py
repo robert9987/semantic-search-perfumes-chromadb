@@ -103,7 +103,7 @@ INDEX_HTML = """
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Busqueda semantica de familias olfativas</title>
+  <title>Mista | Busqueda semantica de familias olfativas</title>
   <style>
     :root {
       --bg: #f6f3ec;
@@ -480,8 +480,8 @@ INDEX_HTML = """
   <div class="layout">
     <aside class="sidebar">
       <section class="brand">
-        <h1>Familias olfativas</h1>
-        <p>Busqueda semantica con ChromaDB</p>
+        <h1>Mista</h1>
+        <p>Busqueda semantica de familias olfativas con ChromaDB</p>
       </section>
 
       <div class="wheel" aria-hidden="true"><span>Rueda de fragancias</span></div>
@@ -513,7 +513,7 @@ INDEX_HTML = """
 
     <main>
       <header class="topbar">
-        <h2>Recomendador semantico</h2>
+        <h2>Familias olfativas</h2>
         <span id="status" class="status">Listo</span>
       </header>
 
