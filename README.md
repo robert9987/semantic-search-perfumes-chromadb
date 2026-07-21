@@ -109,7 +109,7 @@ Luego abrir:
 http://127.0.0.1:8000
 ```
 
-El frontend permite escribir una consulta, elegir familias olfativas prearmadas, incluir o excluir los documentos nuevos y ver tarjetas con similitud, notas y metadata.
+El frontend permite escribir una consulta, elegir familia olfativa y perfil/subfamilia desde listas desplegables, incluir o excluir los documentos nuevos y ver tarjetas con similitud, notas y metadata.
 
 ## Ejecutar tests
 

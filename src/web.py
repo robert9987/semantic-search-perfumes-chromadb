@@ -103,7 +103,7 @@ INDEX_HTML = """
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mista | Busqueda semantica de familias olfativas</title>
+  <title>Mista | Familias olfativas</title>
   <style>
     :root {
       --bg: #f6f3ec;
@@ -137,7 +137,8 @@ INDEX_HTML = """
     }
 
     button,
-    input {
+    input,
+    select {
       font: inherit;
     }
 
@@ -205,13 +206,13 @@ INDEX_HTML = """
       padding: 14px;
     }
 
-    .family-list {
+    .family-controls {
       display: grid;
-      gap: 8px;
+      gap: 12px;
       align-content: start;
     }
 
-    .family-list h2,
+    .family-controls h2,
     .settings h2 {
       margin: 0 0 4px;
       color: var(--muted);
@@ -219,32 +220,39 @@ INDEX_HTML = """
       text-transform: uppercase;
     }
 
-    .family-button {
-      min-height: 38px;
+    .select-row {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .select-row select {
+      width: 100%;
+      min-height: 42px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 8px 10px;
+      padding: 9px 10px;
       background: var(--panel);
       color: var(--ink);
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
     }
 
-    .family-button:hover,
-    .family-button:focus-visible {
+    .select-row select:focus {
       border-color: var(--green);
       outline: 3px solid rgba(47, 111, 94, 0.12);
     }
 
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      flex: 0 0 auto;
-      background: var(--dot);
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 5px;
+    }
+
+    .palette span {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--color);
     }
 
     .settings {
@@ -439,8 +447,8 @@ INDEX_HTML = """
         display: none;
       }
 
-      .family-list {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+      .family-controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .settings {
@@ -468,7 +476,7 @@ INDEX_HTML = """
         font-size: 24px;
       }
 
-      .family-list,
+      .family-controls,
       .settings,
       .results {
         grid-template-columns: 1fr;
@@ -485,16 +493,36 @@ INDEX_HTML = """
 
       <div class="wheel" aria-hidden="true"><span>Rueda de fragancias</span></div>
 
-      <section class="family-list" aria-label="Familias olfativas">
+      <section class="family-controls" aria-label="Familias olfativas">
         <h2>Familias</h2>
-        <button class="family-button" data-query="Busco una fragancia floral suave romantica con rosa jazmin y flores blancas"><span>Floral</span><span class="dot" style="--dot:var(--rose)"></span></button>
-        <button class="family-button" data-query="Quiero una fragancia frutal alegre vibrante con durazno frutilla melon y frutos rojos"><span>Frutal</span><span class="dot" style="--dot:var(--orange)"></span></button>
-        <button class="family-button" data-query="Busco una fragancia fougere verde con lavanda musgo bergamota y bosque humedo"><span>Fougere</span><span class="dot" style="--dot:var(--leaf)"></span></button>
-        <button class="family-button" data-query="Busco un perfume citrico fresco con bergamota limon y naranja"><span>Citrica</span><span class="dot" style="--dot:var(--yellow)"></span></button>
-        <button class="family-button" data-query="Quiero una fragancia aromatica intensa con salvia romero comino lavanda hierbas y especias"><span>Aromatica</span><span class="dot" style="--dot:var(--blue)"></span></button>
-        <button class="family-button" data-query="Busco maderas cedro vetiver pachuli seco elegante masculino"><span>Maderas</span><span class="dot" style="--dot:var(--wood)"></span></button>
-        <button class="family-button" data-query="Quiero una fragancia oriental sensual calida con ambar y vainilla para la noche"><span>Oriental</span><span class="dot" style="--dot:var(--amber)"></span></button>
-        <button class="family-button" data-query="Quiero un chipre fresco juvenil con bergamota pachuli musgo ambar"><span>Chipre</span><span class="dot" style="--dot:var(--violet)"></span></button>
+        <label class="select-row">
+          <span>Familia olfativa</span>
+          <select id="familySelect">
+            <option value="floral">Floral</option>
+            <option value="frutal">Frutal</option>
+            <option value="fougere">Fougere</option>
+            <option value="citrico" selected>Citrico</option>
+            <option value="aromatico">Aromatico</option>
+            <option value="maderas">Maderas</option>
+            <option value="oriental">Oriental</option>
+            <option value="chipre">Chipre</option>
+            <option value="acuatica">Acuatica</option>
+          </select>
+        </label>
+        <label class="select-row">
+          <span>Perfil / subfamilia</span>
+          <select id="profileSelect"></select>
+        </label>
+        <div class="palette" aria-hidden="true">
+          <span style="--color:var(--rose)"></span>
+          <span style="--color:var(--orange)"></span>
+          <span style="--color:var(--leaf)"></span>
+          <span style="--color:var(--yellow)"></span>
+          <span style="--color:var(--blue)"></span>
+          <span style="--color:var(--wood)"></span>
+          <span style="--color:var(--amber)"></span>
+          <span style="--color:var(--violet)"></span>
+        </div>
       </section>
 
       <section class="settings" aria-label="Ajustes">
@@ -528,10 +556,117 @@ INDEX_HTML = """
   <script>
     const form = document.querySelector("#searchForm");
     const queryInput = document.querySelector("#queryInput");
+    const familySelect = document.querySelector("#familySelect");
+    const profileSelect = document.querySelector("#profileSelect");
     const includeNew = document.querySelector("#includeNew");
     const topK = document.querySelector("#topK");
     const results = document.querySelector("#results");
     const statusText = document.querySelector("#status");
+
+    const familyProfiles = {
+      floral: [
+        {
+          label: "Floral delicada",
+          query: "Busco una fragancia floral delicada romantica con flores blancas rosa y jazmin"
+        },
+        {
+          label: "Floral suave",
+          query: "Quiero un perfume floral suave femenino con primavera flores frescas y aroma limpio"
+        },
+        {
+          label: "Floral oriental",
+          query: "Busco una fragancia floral oriental sensual con flores vainilla especias dulces y ambar"
+        }
+      ],
+      frutal: [
+        {
+          label: "Frutal alegre",
+          query: "Quiero una fragancia frutal alegre vibrante con durazno frutilla melon y frutos rojos"
+        },
+        {
+          label: "Frutal jugosa",
+          query: "Busco perfume frutal jugoso con anana sandia ciruela y personalidad jovial"
+        }
+      ],
+      fougere: [
+        {
+          label: "Fougere verde",
+          query: "Busco una fragancia fougere verde con lavanda musgo bergamota y bosque humedo"
+        },
+        {
+          label: "Fougere tradicional",
+          query: "Quiero un perfume fougere masculino con lavanda maderas humedas musgo y elegancia clasica"
+        }
+      ],
+      citrico: [
+        {
+          label: "Citrico fresco",
+          query: "Busco un perfume citrico fresco con bergamota limon naranja y sensacion limpia"
+        },
+        {
+          label: "Citrico unisex",
+          query: "Quiero una fragancia citrica unisex alegre para el dia con notas volatiles y flores suaves"
+        }
+      ],
+      aromatico: [
+        {
+          label: "Aromatico herbal",
+          query: "Quiero una fragancia aromatica intensa con salvia romero comino lavanda hierbas y especias"
+        },
+        {
+          label: "Aromatico especiado",
+          query: "Busco perfume aromatico masculino con hierbas especias notas citricas y caracter intenso"
+        }
+      ],
+      maderas: [
+        {
+          label: "Maderas secas",
+          query: "Busco maderas secas con cedro vetiver pachuli caracter elegante y masculino"
+        },
+        {
+          label: "Maderas musgosas",
+          query: "Quiero una fragancia de maderas musgosas con musgo vetiver pachuli y bosque humedo"
+        },
+        {
+          label: "Maderas ambaradas",
+          query: "Busco perfume de madera calida con cedro sandalo ambar y fondo intenso"
+        }
+      ],
+      oriental: [
+        {
+          label: "Oriental ambarado",
+          query: "Quiero una fragancia oriental sensual calida con ambar vainilla y resinas para la noche"
+        },
+        {
+          label: "Oriental especiado",
+          query: "Busco perfume oriental especiado con clavo cardamomo jengibre pimienta cacao y regaliz"
+        },
+        {
+          label: "Oriental suave",
+          query: "Quiero una fragancia oriental suave dulce con vainilla ambar calidez y aroma envolvente"
+        }
+      ],
+      chipre: [
+        {
+          label: "Chipre fresco",
+          query: "Quiero un chipre fresco juvenil con bergamota pachuli musgo ambar y almizcle"
+        },
+        {
+          label: "Chipre floral",
+          query: "Busco fragancia chipre con bergamota flores patchuli musgo y elegancia moderna"
+        }
+      ],
+      acuatica: [
+        {
+          label: "Acuatica fresca",
+          query: "Busco una fragancia acuatica fresca marina limpia ligera y alegre para dias calidos"
+        },
+        {
+          label: "Verde acuatica",
+          query: "Quiero perfume fresco verde con notas acuaticas bosque humedo lavanda y musgo"
+        }
+      ]
+    };
 
     const escapeHtml = (value) => String(value)
       .replaceAll("&", "&amp;")
@@ -588,13 +723,35 @@ INDEX_HTML = """
     includeNew.addEventListener("change", search);
     topK.addEventListener("change", search);
 
-    document.querySelectorAll(".family-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        queryInput.value = button.dataset.query;
-        search();
-      });
-    });
+    function populateProfileSelect(shouldSearch = true) {
+      const profiles = familyProfiles[familySelect.value] || [];
+      profileSelect.innerHTML = profiles
+        .map((profile, index) => `<option value="${index}">${escapeHtml(profile.label)}</option>`)
+        .join("");
 
+      if (profiles[0]) {
+        queryInput.value = profiles[0].query;
+      }
+
+      if (shouldSearch) {
+        search();
+      }
+    }
+
+    function applySelectedProfile() {
+      const profiles = familyProfiles[familySelect.value] || [];
+      const profile = profiles[Number(profileSelect.value)] || profiles[0];
+
+      if (profile) {
+        queryInput.value = profile.query;
+        search();
+      }
+    }
+
+    familySelect.addEventListener("change", () => populateProfileSelect());
+    profileSelect.addEventListener("change", applySelectedProfile);
+
+    populateProfileSelect(false);
     search();
   </script>
 </body>
