@@ -100,7 +100,7 @@ Tambien se mantiene el script original como acceso rapido:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Los tests validan que algunas consultas semanticas devuelvan primero el perfume esperado. Por ejemplo, una busqueda con `ambar`, `vainilla`, `oriental` y `sensual` debe rankear primero `Ambar Oriental`.
+Los tests validan que algunas consultas semanticas devuelvan primero la familia esperada. Por ejemplo, una busqueda con `ambar`, `vainilla`, `oriental` y `sensual` debe rankear primero `Familia Oriental`.
 
 ## Que observar
 

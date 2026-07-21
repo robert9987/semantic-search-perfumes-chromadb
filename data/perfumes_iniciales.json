@@ -3,7 +3,7 @@
     "id": "comentario-001",
     "documento": "Fragancia floral suave con flores blancas, rosa y jazmin. Se percibe delicada, romantica, femenina y primaveral.",
     "metadata": {
-      "producto": "Aurora Floral",
+      "producto": "Familia Floral",
       "familia_olfativa": "floral",
       "subfamilia": "floral suave",
       "notas": "flores blancas, rosa, jazmin",
@@ -14,7 +14,7 @@
     "id": "comentario-002",
     "documento": "Perfume frutal con durazno, frutilla, anana, melon y frutos rojos. Tiene una personalidad alegre, vibrante y jovial.",
     "metadata": {
-      "producto": "Fruta Roja",
+      "producto": "Familia Frutal",
       "familia_olfativa": "frutal",
       "subfamilia": "frutal jugoso",
       "notas": "durazno, frutilla, anana, melon, frutos rojos",
@@ -25,7 +25,7 @@
     "id": "comentario-003",
     "documento": "Fragancia fougere con lavanda, musgo, encina y bergamota. Evoca bosque humedo, aromas verdes y un perfil masculino tradicional.",
     "metadata": {
-      "producto": "Verde Fougere",
+      "producto": "Familia Fougere",
       "familia_olfativa": "fougere",
       "subfamilia": "fougere verde",
       "notas": "lavanda, musgo, encina, bergamota",
@@ -47,7 +47,7 @@
     "id": "comentario-005",
     "documento": "Fragancia aromatica con salvia, romero, comino y lavanda. Mezcla hierbas y especias con un caracter intenso y masculino.",
     "metadata": {
-      "producto": "Herbal Aromatico",
+      "producto": "Familia Aromatica",
       "familia_olfativa": "aromatico",
       "subfamilia": "aromatico especiado",
       "notas": "salvia, romero, comino, lavanda",
@@ -58,7 +58,7 @@
     "id": "comentario-006",
     "documento": "Perfume de maderas con cedro, abedul, sandalo, vetiver y pachuli. Se siente seco, elegante, distinguido y de caracter masculino.",
     "metadata": {
-      "producto": "Cedro Vetiver",
+      "producto": "Familia Maderas",
       "familia_olfativa": "maderas",
       "subfamilia": "maderas secas",
       "notas": "cedro, abedul, sandalo, vetiver, pachuli",

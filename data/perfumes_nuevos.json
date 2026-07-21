@@ -3,7 +3,7 @@
     "id": "comentario-007",
     "documento": "Perfume oriental con ambar, vainilla, resinas, clavo y cardamomo. Es calido, sensual, dulce y envolvente.",
     "metadata": {
-      "producto": "Ambar Oriental",
+      "producto": "Familia Oriental",
       "familia_olfativa": "oriental",
       "subfamilia": "oriental ambarado",
       "notas": "ambar, vainilla, resinas, clavo, cardamomo",
@@ -14,7 +14,7 @@
     "id": "comentario-008",
     "documento": "Fragancia chipre con bergamota, flores, pachuli, musgo, ambar y almizcle. Resulta fresca, juvenil, informal y sofisticada.",
     "metadata": {
-      "producto": "Chipre Luminoso",
+      "producto": "Familia Chipre",
       "familia_olfativa": "chipre",
       "subfamilia": "chipre fresco",
       "notas": "bergamota, flores, pachuli, musgo, ambar, almizcle",
@@ -25,7 +25,7 @@
     "id": "comentario-009",
     "documento": "Fragancia acuatica de la familia fresca con notas marinas, agua limpia y citricos suaves. Es liviana, limpia y perfecta para todos los dias.",
     "metadata": {
-      "producto": "Agua Clara",
+      "producto": "Familia Acuatica",
       "familia_olfativa": "fresco",
       "subfamilia": "acuatica",
       "notas": "notas marinas, agua limpia, citricos suaves",
@@ -36,7 +36,7 @@
     "id": "comentario-010",
     "documento": "Perfume floral oriental con flores, vainilla, especias dulces y ambar. Combina sensualidad oriental con un costado femenino y elegante.",
     "metadata": {
-      "producto": "Flor de Ambar",
+      "producto": "Familia Floral Oriental",
       "familia_olfativa": "oriental floral",
       "subfamilia": "floral oriental",
       "notas": "flores, vainilla, especias dulces, ambar",

@@ -53,28 +53,28 @@ class SearchRankingTest(unittest.TestCase):
             "Familia Citrica",
         )
 
-    def test_wood_query_returns_cedro_vetiver(self) -> None:
+    def test_wood_query_returns_familia_maderas(self) -> None:
         self.assertTopProduct(
             "Busco maderas cedro vetiver pachuli seco elegante masculino",
-            "Cedro Vetiver",
+            "Familia Maderas",
         )
 
-    def test_oriental_query_returns_ambar_oriental(self) -> None:
+    def test_oriental_query_returns_familia_oriental(self) -> None:
         self.assertTopProduct(
             "Quiero una fragancia oriental sensual calida con ambar y vainilla",
-            "Ambar Oriental",
+            "Familia Oriental",
         )
 
-    def test_chypre_query_returns_chipre_luminoso(self) -> None:
+    def test_chypre_query_returns_familia_chipre(self) -> None:
         self.assertTopProduct(
             "Quiero un chipre fresco juvenil con bergamota pachuli musgo ambar",
-            "Chipre Luminoso",
+            "Familia Chipre",
         )
 
-    def test_aquatic_query_returns_agua_clara(self) -> None:
+    def test_aquatic_query_returns_familia_acuatica(self) -> None:
         self.assertTopProduct(
             "Busco una fragancia acuatica limpia liviana con notas marinas para diario",
-            "Agua Clara",
+            "Familia Acuatica",
         )
 
 
