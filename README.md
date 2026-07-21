@@ -36,6 +36,8 @@ Construir una demo simple que muestre el flujo principal de una base vectorial:
 |   `-- vector_store.py
 |-- tests/
 |   `-- test_search.py
+|-- examples/
+|   `-- queries.md
 |-- ejercicio_0_chromadb.py
 |-- requirements.txt
 |-- README.md
@@ -101,6 +103,14 @@ Tambien se mantiene el script original como acceso rapido:
 ```
 
 Los tests validan que algunas consultas semanticas devuelvan primero la familia esperada. Por ejemplo, una busqueda con `ambar`, `vainilla`, `oriental` y `sensual` debe rankear primero `Familia Oriental`.
+
+## Ejemplos de consultas
+
+Ver ejemplos listos para copiar en:
+
+```text
+examples/queries.md
+```
 
 ## Que observar
 
