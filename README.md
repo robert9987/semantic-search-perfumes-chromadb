@@ -159,9 +159,6 @@ Cada familia incluye metadata pensada para busqueda y analisis:
 - Todavia no usa embeddings reales de modelos especializados.
 - La interfaz web es local y usa el servidor HTTP incluido en Python; no esta preparada todavia como aplicacion desplegable.
 
-## Como explicarlo en el CV
-
-Proyecto de busqueda semantica con ChromaDB aplicado a comentarios de perfumeria. Modele textos como vectores usando una taxonomia inspirada en la rueda de fragancias, cree una coleccion vectorial y ejecute consultas por similitud comparando resultados antes y despues de insertar nuevos documentos.
 
 ## Proximas mejoras
 
